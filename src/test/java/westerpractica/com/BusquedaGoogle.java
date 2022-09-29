@@ -52,7 +52,7 @@ public class BusquedaGoogle {
 			
 			//Fluent Wait
 			
-			
+			//barra
 			
 			
 			assertEquals("quality-stream introduccion a la automatizacion de pruebas de software - Buscar con Google", driver.getTitle());

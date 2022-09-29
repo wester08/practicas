@@ -3,13 +3,13 @@ package com.project.pom;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class LoginUser extends Base{
+public class LoginUser extends Base {
 	
 	By usernameLocator = By.id("email");
 	By passwordLocator = By.name("pass");
 	By loginBtnLocator = By.name("login");
 	
-	By facebookPageLocator = By.xpath("//img[@src=\"https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg\"]");
+	By facebookPageLocator = By.id("facebook");
 
 	public LoginUser(WebDriver driver) {
 		super(driver);
@@ -17,15 +17,21 @@ public class LoginUser extends Base{
 			}
 	
 	public void loginUser() {
-		
-		
-	}
-		
-		public boolean isFacebookPageDisplayed() {
-			
-			return true;
+		if (isDisplayed(usernameLocator)) {
+			type("wester.feliz08@gmail.com", usernameLocator);
+			type("Morivivi970806", passwordLocator);
+			click(loginBtnLocator);
+		} else {
+			System.out.println("üsername texbox was not present");	
 		}
-}	
+			
+	}
+		public boolean isFacebookPageDisplayed() {
+			return isDisplayed(facebookPageLocator);
+		
+		}
+		
+	}	
 	
 
 
